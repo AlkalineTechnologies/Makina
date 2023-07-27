@@ -9,7 +9,7 @@ Makefile
 *.dylib
 *.dll
 *.exe
-
+*.a
 # IDE-specific files
 .vscode/
 .idea/
