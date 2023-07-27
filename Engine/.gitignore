@@ -1,0 +1,24 @@
+# CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Compiled binaries
+*.so
+*.dylib
+*.dll
+*.exe
+
+# IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.opensdf
+*.sdf
+*.cproject
+*.project
