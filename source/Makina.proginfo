@@ -4,8 +4,5 @@
     [author] Me
     [License] GPLv3
 }
-
-[README] {
-    // this is a comment.
-    // and markdown goes here too.
+[README]{
 }
