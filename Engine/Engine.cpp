@@ -2,3 +2,5 @@
 #include "Engine.hpp"
 
 // definitions here...
+namespace Engine {
+}
