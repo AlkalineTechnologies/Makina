@@ -1,2 +1,2 @@
-# Recoilium
-A movement based first action multiplayer recoil game
+# Makina
+movement focused supersoldier warfare FPS game.
