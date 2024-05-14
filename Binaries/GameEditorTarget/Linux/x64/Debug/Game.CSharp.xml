@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Game.CSharp</name>
+    </assembly>
+    <members>
+        <member name="M:Game.PlayerController.OnStart">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.PlayerController.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.PlayerController.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.PlayerController.OnUpdate">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

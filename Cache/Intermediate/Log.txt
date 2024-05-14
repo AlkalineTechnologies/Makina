@@ -1,0 +1,66 @@
+[00:00:016] Flax.Build 1.0.0
+[00:00:017]   Arguments: log -mutex -genproject -vscode -vs2022
+[00:00:017]   Workspace: /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina
+[00:00:017]   Engine: /home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1
+[00:00:017]   .NET 8.0.4
+[00:00:020] Loading project file from "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/ProjectMakina.flaxproj"...
+[00:00:052] Loading project file from "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Flax.flaxproj"...
+[00:00:054] Loaded project Flax, version 1.8.6511.1
+[00:00:054] Loaded project ProjectMakina, version 1.0
+[00:00:068] Engine build version: 1.8.6511.1
+[00:00:085] Generating project files...
+[00:00:107] Found Android SDK at /opt/android-sdk
+[00:00:113] which clang++-17 exit code: 1, result: 
+[00:00:115] which clang++-16 exit code: 1, result: 
+[00:00:117] which clang++-15 exit code: 1, result: 
+[00:00:118] which clang++-14 exit code: 1, result: 
+[00:00:120] which clang++-13 exit code: 1, result: 
+[00:00:122] which clang++-12 exit code: 1, result: 
+[00:00:124] which clang++-11 exit code: 1, result: 
+[00:00:125] which clang++-10 exit code: 1, result: 
+[00:00:127] which clang++-9 exit code: 1, result: 
+[00:00:129] which clang++-8 exit code: 1, result: 
+[00:00:131] which clang++-7 exit code: 1, result: 
+[00:00:132] which clang++-6 exit code: 1, result: 
+[00:00:134] which clang++ exit code: 0, result: /usr/bin/clang++
+[00:00:134] Using native Linux toolchain (compiler clang++)
+[00:00:146] which clang++ exit code: 0, result: /usr/bin/clang++
+[00:00:152] which ar exit code: 0, result: /usr/bin/ar
+[00:00:154] which llvm-ar exit code: 0, result: /usr/bin/llvm-ar
+[00:00:157] which ranlib exit code: 0, result: /usr/bin/ranlib
+[00:00:159] which strip exit code: 0, result: /usr/bin/strip
+[00:00:161] which objcopy exit code: 0, result: /usr/bin/objcopy
+[00:00:163] which ld.lld exit code: 0, result: /usr/bin/ld.lld
+[00:00:213] Found VulkanSDK at: /usr/include
+[00:00:402] Found the following .NET SDK versions: 8.0.104, 7.0.401, 7.0.118
+[00:00:402] Found the following .NET runtime versions: 8.0.4, 7.0.18, 7.0.11
+[00:00:404] Using .NET SDK 8.0.104, runtime 8.0.4 (/usr/share/dotnet)
+[00:00:407]   - Host Runtime for Linux x64
+[00:00:521] Game -> /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Source/Game.csproj
+[00:00:528] Saved file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Source/Game.csproj
+[00:00:531] which clang++ exit code: 0, result: /usr/bin/clang++
+[00:00:533] which ar exit code: 0, result: /usr/bin/ar
+[00:00:535] which llvm-ar exit code: 0, result: /usr/bin/llvm-ar
+[00:00:538] which ranlib exit code: 0, result: /usr/bin/ranlib
+[00:00:539] which strip exit code: 0, result: /usr/bin/strip
+[00:00:541] which objcopy exit code: 0, result: /usr/bin/objcopy
+[00:00:543] which ld.lld exit code: 0, result: /usr/bin/ld.lld
+[00:00:575] Project BuildScripts -> /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Cache/Projects/BuildScripts.csproj
+[00:00:576] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Cache/Projects/BuildScripts.csproj
+[00:00:576] Solution -> /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/ProjectMakina.sln
+[00:00:590] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/ProjectMakina.sln
+[00:00:591] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/ProjectMakina.sln.DotSettings.user
+[00:00:591] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Cache/Projects/Flax.Build.CSharp.SkipBuild.targets
+[00:00:592] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Cache/Projects/Flax.Build.CSharp.targets
+[00:00:672] Game -> /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Source/Game.
+[00:00:673] Project BuildScripts -> /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Cache/Projects/BuildScripts.
+[00:00:673] Solution -> /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/ProjectMakina.
+[00:00:683] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/.vscode/tasks.json
+[00:00:684] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/.vscode/launch.json
+[00:00:696] Saved file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/.vscode/c_cpp_properties.json
+[00:00:696] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/.vscode/settings.json
+[00:00:696] Saved file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/ProjectMakina.code-workspace
+[00:00:696] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/.vscode/extensions.json
+[00:00:697] Skipped saving file to /home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/omnisharp.json
+[00:00:698] Total time: 00:00:00.7056453
+[00:00:698] End.

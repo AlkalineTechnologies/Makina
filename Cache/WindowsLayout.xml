@@ -1,0 +1,35 @@
+﻿<DockPanelLayout Version="4">
+	<MainWindow>
+		<Bounds X="1" Y="28" Width="1917" Height="1006" IsMaximized="False" IsMinimized="False" />
+	</MainWindow>
+	<MasterPanel SelectedTab="0">
+		<Window Typename="::FlaxEditor.Windows.EditGameWindow">
+			<Data GridEnabled="False" ShowFpsCounter="False" ShowNavigation="False" NearPlane="8" FarPlane="20000" FieldOfView="60" MovementSpeed="22.621" OrthographicScale="3.535489" UseOrthographicProjection="False" ViewFlags="122683391" />
+		</Window>
+		<Window Typename="::FlaxEditor.Windows.GameWindow">
+			<Data ShowGUI="True" ShowDebugDraw="False" DefaultViewportScaling="[]" CustomViewportScaling="[]" />
+		</Window>
+		<Panel DockState="10" SplitterValue="0.24000001" SelectedTab="0">
+			<Window Typename="::FlaxEditor.Windows.PropertiesWindow">
+				<Data ScaleLinked="False" UIPivotRelative="True" />
+			</Window>
+			<Panel DockState="7" SplitterValue="0.25" SelectedTab="0">
+				<Window Typename="::FlaxEditor.Windows.ToolboxWindow" />
+			</Panel>
+		</Panel>
+		<Panel DockState="9" SplitterValue="0.37" SelectedTab="0">
+			<Window Typename="::FlaxEditor.Windows.ContentWindow">
+				<Data Split="0.2" Scale="1" ShowFileExtensions="False" ShowEngineFiles="True" ShowPluginsFiles="True" ShowAllFiles="True" ShowGeneratedFiles="False" ViewType="Tiles" />
+			</Window>
+			<Window Typename="::FlaxEditor.Windows.DebugLogWindow">
+				<Data Split="0.8" />
+			</Window>
+			<Window Typename="::FlaxEditor.Windows.OutputLogWindow">
+				<Data LogTypeShowMask="15" />
+			</Window>
+		</Panel>
+		<Panel DockState="8" SplitterValue="0.25" SelectedTab="0">
+			<Window Typename="::FlaxEditor.Windows.SceneTreeWindow" />
+		</Panel>
+	</MasterPanel>
+</DockPanelLayout>

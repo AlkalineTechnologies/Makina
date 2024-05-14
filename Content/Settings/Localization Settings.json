@@ -1,0 +1,9 @@
+{
+	"ID": "08dc7383016db133f5168ab882742931",
+	"TypeName": "FlaxEditor.Content.Settings.LocalizationSettings",
+	"EngineBuild": 6511,
+	"Data": {
+	"LocalizedStringTables": null,
+	"DefaultFallbackLanguage": null
+}
+}

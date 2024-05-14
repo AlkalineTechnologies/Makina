@@ -1,0 +1,2 @@
+-8584859601017464563
+/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1;.NET 8.0.4;/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build.dll

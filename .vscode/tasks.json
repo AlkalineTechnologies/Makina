@@ -1,0 +1,137 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "ProjectMakina|Game.Linux.Debug|x64",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"args": [
+				"--build",
+				"--log",
+				"--mutex",
+				"--workspace=\\\"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\\\"",
+				"--arch=x64",
+				"--configuration=Debug",
+				"--platform=Linux",
+				"--buildTargets=GameTarget"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina"
+			}
+		},
+		{
+			"label": "ProjectMakina|Game.Linux.Development|x64",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"args": [
+				"--build",
+				"--log",
+				"--mutex",
+				"--workspace=\\\"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\\\"",
+				"--arch=x64",
+				"--configuration=Development",
+				"--platform=Linux",
+				"--buildTargets=GameTarget"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina"
+			}
+		},
+		{
+			"label": "ProjectMakina|Game.Linux.Release|x64",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"args": [
+				"--build",
+				"--log",
+				"--mutex",
+				"--workspace=\\\"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\\\"",
+				"--arch=x64",
+				"--configuration=Release",
+				"--platform=Linux",
+				"--buildTargets=GameTarget"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina"
+			}
+		},
+		{
+			"label": "ProjectMakina|Editor.Linux.Debug|x64",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"args": [
+				"--build",
+				"--log",
+				"--mutex",
+				"--workspace=\\\"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\\\"",
+				"--arch=x64",
+				"--configuration=Debug",
+				"--platform=Linux",
+				"--buildTargets=GameEditorTarget"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina"
+			}
+		},
+		{
+			"label": "ProjectMakina|Editor.Linux.Development|x64",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"args": [
+				"--build",
+				"--log",
+				"--mutex",
+				"--workspace=\\\"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\\\"",
+				"--arch=x64",
+				"--configuration=Development",
+				"--platform=Linux",
+				"--buildTargets=GameEditorTarget"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina"
+			}
+		},
+		{
+			"label": "ProjectMakina|Editor.Linux.Release|x64",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"args": [
+				"--build",
+				"--log",
+				"--mutex",
+				"--workspace=\\\"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\\\"",
+				"--arch=x64",
+				"--configuration=Release",
+				"--platform=Linux",
+				"--buildTargets=GameEditorTarget"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina"
+			}
+		}
+	]
+}

@@ -1,0 +1,46 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31314.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Source/Game.csproj", "{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildScripts", "Cache/Projects/BuildScripts.csproj", "{87425C36-2FED-45B4-9C99-F5665D028DA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Editor.Debug|Linux_x64 = Editor.Debug|Linux_x64
+		Editor.Development|Linux_x64 = Editor.Development|Linux_x64
+		Editor.Release|Linux_x64 = Editor.Release|Linux_x64
+		Game.Debug|Linux_x64 = Game.Debug|Linux_x64
+		Game.Development|Linux_x64 = Game.Development|Linux_x64
+		Game.Release|Linux_x64 = Game.Release|Linux_x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Editor.Debug|Linux_x64.ActiveCfg = Editor.Linux.Debug|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Editor.Debug|Linux_x64.Build.0 = Editor.Linux.Debug|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Editor.Development|Linux_x64.ActiveCfg = Editor.Linux.Development|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Editor.Development|Linux_x64.Build.0 = Editor.Linux.Development|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Editor.Release|Linux_x64.ActiveCfg = Editor.Linux.Release|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Editor.Release|Linux_x64.Build.0 = Editor.Linux.Release|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Debug|Linux_x64.ActiveCfg = Game.Linux.Debug|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Debug|Linux_x64.Build.0 = Game.Linux.Debug|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Development|Linux_x64.ActiveCfg = Game.Linux.Development|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Development|Linux_x64.Build.0 = Game.Linux.Development|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Release|Linux_x64.ActiveCfg = Game.Linux.Release|x64
+		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Release|Linux_x64.Build.0 = Game.Linux.Release|x64
+		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Editor.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
+		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Editor.Development|Linux_x64.ActiveCfg = Debug|Any CPU
+		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Editor.Release|Linux_x64.ActiveCfg = Debug|Any CPU
+		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Game.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
+		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Game.Development|Linux_x64.ActiveCfg = Debug|Any CPU
+		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Game.Release|Linux_x64.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C2B8FB0-E0A8-4DD8-A3C4-C6931AAD8CB3}
+	EndGlobalSection
+EndGlobal
