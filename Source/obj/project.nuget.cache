@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TinHtKh4bbmQyWcJykmktaE0BFuvDf3rN/J/t+ySVhWuYqbQtIy+lShwFYP68IjKYWxu75FKKd65jP/rP6K4Kw==",
+  "dgSpecHash": "DSzyi5u6wN9dvYggbu6gQ2UzzIIrILlkn8/W6xCf+BPkVeKraUzwTcix550n3DUPSohmCxIWyDOyRE1Xve8/fw==",
   "success": true,
   "projectFilePath": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina/Source/Game.csproj",
   "expectedPackageFiles": [
-    "/home/plasmarad/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.4/microsoft.aspnetcore.app.ref.8.0.4.nupkg.sha512"
+    "/home/plasmarad/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.6/microsoft.aspnetcore.app.ref.8.0.6.nupkg.sha512"
   ],
   "logs": []
 }

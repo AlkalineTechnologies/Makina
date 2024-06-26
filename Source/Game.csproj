@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Debug|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -63,7 +63,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Debug|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -84,7 +84,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Development|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -105,7 +105,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Release|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -126,7 +126,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Debug|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -147,7 +147,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Development|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -168,19 +168,23 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Release|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="FlaxEngine.CSharp">
-      <HintPath>..\..\..\..\3rd_party\Flax_Engines\Flax_1.8.1\Binaries\Editor\Linux\Development\FlaxEngine.CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Binaries\Editor\Linux\Development\FlaxEngine.CSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game.Gen.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\Camera.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\Interact.cs" />
     <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\Movement\PlayerController.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\PlayerController.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Utility\LinearGravity.cs" />
     <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameTarget\Linux\x64\Debug\Game\Game.Bindings.Gen.cs" />
     <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameTarget\Linux\x64\Development\Game\Game.Bindings.Gen.cs" />
     <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameTarget\Linux\x64\Release\Game\Game.Bindings.Gen.cs" />

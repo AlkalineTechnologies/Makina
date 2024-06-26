@@ -7,7 +7,7 @@
 				"kind": "build",
 				"isDefault": false
 			},
-			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"command": "../../../3rd_party/Flax_Engines/GIT_MASTER/Binaries/Tools/Flax.Build",
 			"args": [
 				"--build",
 				"--log",
@@ -29,7 +29,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"command": "../../../3rd_party/Flax_Engines/GIT_MASTER/Binaries/Tools/Flax.Build",
 			"args": [
 				"--build",
 				"--log",
@@ -51,7 +51,7 @@
 				"kind": "build",
 				"isDefault": false
 			},
-			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"command": "../../../3rd_party/Flax_Engines/GIT_MASTER/Binaries/Tools/Flax.Build",
 			"args": [
 				"--build",
 				"--log",
@@ -73,7 +73,7 @@
 				"kind": "build",
 				"isDefault": false
 			},
-			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"command": "../../../3rd_party/Flax_Engines/GIT_MASTER/Binaries/Tools/Flax.Build",
 			"args": [
 				"--build",
 				"--log",
@@ -95,7 +95,7 @@
 				"kind": "build",
 				"isDefault": false
 			},
-			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"command": "../../../3rd_party/Flax_Engines/GIT_MASTER/Binaries/Tools/Flax.Build",
 			"args": [
 				"--build",
 				"--log",
@@ -117,7 +117,7 @@
 				"kind": "build",
 				"isDefault": false
 			},
-			"command": "../../../3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Tools/Flax.Build",
+			"command": "../../../3rd_party/Flax_Engines/GIT_MASTER/Binaries/Tools/Flax.Build",
 			"args": [
 				"--build",
 				"--log",

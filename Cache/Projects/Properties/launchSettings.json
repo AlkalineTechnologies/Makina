@@ -3,7 +3,7 @@
     "BuildScripts": {
       "commandName": "Executable",
       "workingDirectory": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-      "executablePath": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Development/FlaxEditor",
+      "executablePath": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Development/FlaxEditor",
       "commandLineArgs": "-project \"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina\"",
       "nativeDebugging": false
     }

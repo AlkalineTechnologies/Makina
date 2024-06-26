@@ -2,7 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31314.256
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Flax", "Flax", "{A3DF0037-50BD-478B-A3DA-455FFC1D122A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source/Tools", "Flax\Source/Tools", "{3F64284F-DDB3-4BF8-B76D-DB94F5DFF876}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Source/Game.csproj", "{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flax.Build.Tests", "../../../3rd_party/Flax_Engines/GIT_MASTER/Source/Tools/Flax.Build.Tests/Flax.Build.Tests.csproj", "{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flax.Build", "../../../3rd_party/Flax_Engines/GIT_MASTER/Source/Tools/Flax.Build/Flax.Build.csproj", "{DBB34FC8-71E1-426A-AA89-33F26D884BB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildScripts", "Cache/Projects/BuildScripts.csproj", "{87425C36-2FED-45B4-9C99-F5665D028DA3}"
 EndProject
@@ -28,6 +36,18 @@ Global
 		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Development|Linux_x64.Build.0 = Game.Linux.Development|x64
 		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Release|Linux_x64.ActiveCfg = Game.Linux.Release|x64
 		{2AFF03D2-0655-47DE-9A48-CAAC4D7F4861}.Game.Release|Linux_x64.Build.0 = Game.Linux.Release|x64
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}.Editor.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}.Editor.Development|Linux_x64.ActiveCfg = Debug|Any CPU
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}.Editor.Release|Linux_x64.ActiveCfg = Debug|Any CPU
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}.Game.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}.Game.Development|Linux_x64.ActiveCfg = Debug|Any CPU
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB}.Game.Release|Linux_x64.ActiveCfg = Debug|Any CPU
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9}.Editor.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9}.Editor.Development|Linux_x64.ActiveCfg = Debug|Any CPU
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9}.Editor.Release|Linux_x64.ActiveCfg = Debug|Any CPU
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9}.Game.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9}.Game.Development|Linux_x64.ActiveCfg = Debug|Any CPU
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9}.Game.Release|Linux_x64.ActiveCfg = Debug|Any CPU
 		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Editor.Debug|Linux_x64.ActiveCfg = Debug|Any CPU
 		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Editor.Development|Linux_x64.ActiveCfg = Debug|Any CPU
 		{87425C36-2FED-45B4-9C99-F5665D028DA3}.Editor.Release|Linux_x64.ActiveCfg = Debug|Any CPU
@@ -39,6 +59,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{3F64284F-DDB3-4BF8-B76D-DB94F5DFF876} = {A3DF0037-50BD-478B-A3DA-455FFC1D122A}
+		{AA28A8E9-5371-4D3E-947D-7C9AEE8B59AB} = {3F64284F-DDB3-4BF8-B76D-DB94F5DFF876}
+		{DBB34FC8-71E1-426A-AA89-33F26D884BB9} = {3F64284F-DDB3-4BF8-B76D-DB94F5DFF876}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C2B8FB0-E0A8-4DD8-A3C4-C6931AAD8CB3}

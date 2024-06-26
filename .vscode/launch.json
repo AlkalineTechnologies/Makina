@@ -7,7 +7,7 @@
 			"request": "launch",
 			"preLaunchTask": "ProjectMakina|Game.Linux.Debug|x64",
 			"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-			"program": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Debug/FlaxEditor",
+			"program": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Debug/FlaxEditor",
 			"args": [
 				"-project",
 				"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
@@ -20,7 +20,7 @@
 			"request": "launch",
 			"preLaunchTask": "ProjectMakina|Game.Linux.Development|x64",
 			"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-			"program": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Development/FlaxEditor",
+			"program": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Development/FlaxEditor",
 			"args": [
 				"-project",
 				"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
@@ -33,7 +33,7 @@
 			"request": "launch",
 			"preLaunchTask": "ProjectMakina|Game.Linux.Release|x64",
 			"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-			"program": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Release/FlaxEditor",
+			"program": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Release/FlaxEditor",
 			"args": [
 				"-project",
 				"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
@@ -46,7 +46,7 @@
 			"request": "launch",
 			"preLaunchTask": "ProjectMakina|Editor.Linux.Debug|x64",
 			"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-			"program": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Debug/FlaxEditor",
+			"program": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Debug/FlaxEditor",
 			"args": [
 				"-project",
 				"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
@@ -59,7 +59,7 @@
 			"request": "launch",
 			"preLaunchTask": "ProjectMakina|Editor.Linux.Development|x64",
 			"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-			"program": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Development/FlaxEditor",
+			"program": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Development/FlaxEditor",
 			"args": [
 				"-project",
 				"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
@@ -72,7 +72,7 @@
 			"request": "launch",
 			"preLaunchTask": "ProjectMakina|Editor.Linux.Release|x64",
 			"cwd": "/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
-			"program": "/home/plasmarad/3rd_party/Flax_Engines/Flax_1.8.1/Binaries/Editor/Linux/Release/FlaxEditor",
+			"program": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER/Binaries/Editor/Linux/Release/FlaxEditor",
 			"args": [
 				"-project",
 				"/home/plasmarad/Projects/FLAX_PROJECTS/Project-Makina",
