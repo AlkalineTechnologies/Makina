@@ -1,2 +1,2 @@
 # Makina
-movement focused supersoldier warfare FPS game.
+Source code for the demo
