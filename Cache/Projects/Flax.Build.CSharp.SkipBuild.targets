@@ -1,4 +1,0 @@
-<Project>
-  <!-- Prevent building projects with MSBuild, let Flax.Build handle the building process -->
-  <Target Name="Build" Condition="'false' == 'true'" />
-</Project>
