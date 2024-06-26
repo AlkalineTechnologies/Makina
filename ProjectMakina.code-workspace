@@ -1,0 +1,21 @@
+{
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"gulp.autoDetect": "off",
+		"jake.autoDetect": "off",
+		"grunt.autoDetect": "off",
+		"omnisharp.defaultLaunchSolution": "ProjectMakina.sln",
+		"omnisharp.useModernNet": true
+	},
+	"folders": [
+		{
+			"name": "ProjectMakina",
+			"path": "."
+		},
+		{
+			"name": "Flax",
+			"path": "/home/plasmarad/3rd_party/Flax_Engines/GIT_MASTER"
+		}
+	]
+}

@@ -1,0 +1,195 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Configurations>Game.Linux.Debug;Game.Linux.Development;Game.Linux.Release;Editor.Linux.Debug;Editor.Linux.Development;Editor.Linux.Release</Configurations>
+    <Platforms>x64</Platforms>
+    <Configuration>Editor.Linux.Debug</Configuration>
+    <Platform>x64</Platform>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <EnableBaseIntermediateOutputPathMismatchWarning>false</EnableBaseIntermediateOutputPathMismatchWarning>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <RootNamespace>Game</RootNamespace>
+    <AssemblyName>Game.CSharp</AssemblyName>
+    <LangVersion>12.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <CustomAfterMicrosoftCommonTargets>$(MSBuildThisFileDirectory)../Cache/Projects/Flax.Build.CSharp.targets</CustomAfterMicrosoftCommonTargets>
+    <RestorePackages>false</RestorePackages>
+    <DisableFastUpToDateCheck>True</DisableFastUpToDateCheck>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Binaries/GameEditorTarget/Linux/x64/Debug\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Debug/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Debug/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_DEBUG;PLATFORM_LINUX;FLAX_EDITOR;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameEditorTarget/Linux/x64/Debug\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Debug|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Binaries/GameTarget/Linux/x64/Debug\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameTarget/Linux/x64/Debug/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameTarget/Linux/x64/Debug/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_DEBUG;PLATFORM_LINUX;FLAX_GAME;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameTarget/Linux/x64/Debug\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Debug|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Development|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Binaries/GameTarget/Linux/x64/Development\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameTarget/Linux/x64/Development/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameTarget/Linux/x64/Development/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_DEVELOPMENT;PLATFORM_LINUX;FLAX_GAME;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameTarget/Linux/x64/Development\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Development|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Release|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../Binaries/GameTarget/Linux/x64/Release\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameTarget/Linux/x64/Release/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameTarget/Linux/x64/Release/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_RELEASE;PLATFORM_LINUX;FLAX_GAME;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameTarget/Linux/x64/Release\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Linux.Release|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Binaries/GameEditorTarget/Linux/x64/Debug\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Debug/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Debug/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_DEBUG;PLATFORM_LINUX;FLAX_EDITOR;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameEditorTarget/Linux/x64/Debug\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Debug|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Development|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Binaries/GameEditorTarget/Linux/x64/Development\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Development/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Development/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_DEVELOPMENT;PLATFORM_LINUX;FLAX_EDITOR;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameEditorTarget/Linux/x64/Development\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Development|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Release|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../Binaries/GameEditorTarget/Linux/x64/Release\</OutputPath>
+    <BaseIntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Release/CSharp\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>../Cache/Intermediate/GameEditorTarget/Linux/x64/Release/CSharp\</IntermediateOutputPath>
+    <DefineConstants>BUILD_RELEASE;PLATFORM_LINUX;FLAX_EDITOR;FLAX;FLAX_ASSERTIONS;USE_NETCORE;NET;NET8_0;NET8_0_OR_GREATER;NETCOREAPP;NETCOREAPP3_1_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP1_0_OR_GREATER;FLAX_1;FLAX_1_8;FLAX_1_1_OR_NEWER;FLAX_1_2_OR_NEWER;FLAX_1_3_OR_NEWER;FLAX_1_4_OR_NEWER;FLAX_1_5_OR_NEWER;FLAX_1_6_OR_NEWER;FLAX_1_7_OR_NEWER;FLAX_1_8_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>../Binaries/GameEditorTarget/Linux/x64/Release\Game.CSharp.xml</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Linux.Release|x64' ">
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FlaxEngine.CSharp">
+      <HintPath>..\..\..\..\3rd_party\Flax_Engines\GIT_MASTER\Binaries\Editor\Linux\Development\FlaxEngine.CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game.Gen.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\Camera.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\Interact.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\Movement\PlayerController.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Player\PlayerController.cs" />
+    <Compile Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Source\Game\Utility\LinearGravity.cs" />
+    <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameTarget\Linux\x64\Debug\Game\Game.Bindings.Gen.cs" />
+    <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameTarget\Linux\x64\Development\Game\Game.Bindings.Gen.cs" />
+    <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameTarget\Linux\x64\Release\Game\Game.Bindings.Gen.cs" />
+    <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameEditorTarget\Linux\x64\Debug\Game\Game.Bindings.Gen.cs" />
+    <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameEditorTarget\Linux\x64\Development\Game\Game.Bindings.Gen.cs" />
+    <Compile Visible="false" Include="\home\plasmarad\Projects\FLAX_PROJECTS\Project-Makina\Cache\Intermediate\GameEditorTarget\Linux\x64\Release\Game\Game.Bindings.Gen.cs" />
+  </ItemGroup>
+</Project>
