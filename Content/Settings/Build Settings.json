@@ -1,7 +1,7 @@
 {
-	"ID": "08dc7383016f5f14f516a4368275281b",
+	"ID": "08dc97840193e905e5eb1df4c2c810ea",
 	"TypeName": "FlaxEditor.Content.Settings.BuildSettings",
-	"EngineBuild": 6511,
+	"EngineBuild": 6512,
 	"Data": {
 	"OutputName": "${PROJECT_NAME}",
 	"MaxAssetsPerPackage": 4096,

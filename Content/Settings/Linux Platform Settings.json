@@ -1,7 +1,7 @@
 {
-	"ID": "08dc73830175f473f516bf7282763877",
+	"ID": "08dc97840199cbc3e5ec881bc2d6368a",
 	"TypeName": "FlaxEditor.Content.Settings.LinuxPlatformSettings",
-	"EngineBuild": 6511,
+	"EngineBuild": 6512,
 	"Data": {
 	"WindowMode": 0,
 	"ScreenWidth": 1280,

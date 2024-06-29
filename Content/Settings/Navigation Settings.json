@@ -1,7 +1,7 @@
 {
-	"ID": "08dc7383016bc5d1f51682ac8273d8be",
+	"ID": "08dc9784018f2c38e5e9cc18c2bade4f",
 	"TypeName": "FlaxEditor.Content.Settings.NavigationSettings",
-	"EngineBuild": 6511,
+	"EngineBuild": 6512,
 	"Data": {
 	"AutoAddMissingNavMeshes": true,
 	"AutoRemoveMissingNavMeshes": true,

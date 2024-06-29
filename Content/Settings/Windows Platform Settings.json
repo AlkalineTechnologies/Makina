@@ -1,7 +1,7 @@
 {
-	"ID": "08dc73830173d825f516b64b8275dcf1",
+	"ID": "08dc97840197df72e5ec7a45c2d5ac15",
 	"TypeName": "FlaxEditor.Content.Settings.WindowsPlatformSettings",
-	"EngineBuild": 6511,
+	"EngineBuild": 6512,
 	"Data": {
 	"WindowMode": 0,
 	"ScreenWidth": 1280,

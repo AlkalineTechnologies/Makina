@@ -1,7 +1,7 @@
 {
-	"ID": "08dc73830169c2b5f51658fb827237d5",
+	"ID": "08dc9784018db20be5e9199ac2b3e55a",
 	"TypeName": "FlaxEditor.Content.Settings.NetworkSettings",
-	"EngineBuild": 6511,
+	"EngineBuild": 6512,
 	"Data": {
 	"MaxClients": 100,
 	"ProtocolVersion": 1,
