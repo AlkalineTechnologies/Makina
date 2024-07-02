@@ -13,23 +13,21 @@ public class PlayerController : Script
 {
     /// <inheritdoc/>
 
-    [Header("Actors")]
+    [Header("References")]
 
     public CharacterController  Controller          ;
-    public AudioSource          SFX_Unavailable    ;
+    public AudioSource          SFX_Unavailable     ;
     public UIControl            StaminaBar          ;
     public Collider             GroundCheck         ;
-    public LayersMask           CollisionMask       ;
+    public  LinearGravity       Gravity             ;   
     
 
     [Header("Movement")]
 
-    public  LinearGravity    Gravity                        ;
-    public  float            MovementSpeed                  ;
-    public  float            RunSpeedMultiplier             ;
-    public  float            MovementAirMultiplier          ;
-    public  float            GroundDetectionRayLength       ;
-    private Vector3          Direction = new Vector3(0,0,0) ;
+    public  float            MovementSpeed           = 250f                 ;
+    public  float            RunSpeedMultiplier      = 1.2f                 ;
+    public  float            MovementAirMultiplier   = 1.5f                 ;
+    private Vector3          Direction               = new Vector3(0,0,0)   ;
     
 
     [Header("Inputs")]
@@ -44,30 +42,29 @@ public class PlayerController : Script
 
     //! FOR THE LOVE OF GOD. DO NOT TOUCH THESE SETTINGS UNLESS
     //! YOU ARE A MORON OR A MATH MASSOCIST.
+    public  double      JumpForce           = 125           ;
+    public  int         JumpCooldown        = 250           ;
+    public  double      JumpPeakTime        = 0.45          ;
+    private Vector3     JumpDisplacement    = Vector3.Zero  ;
+    // STATUS:
     public  bool        Jumping             ;
-    public  double      JumpForce           ;
     public  bool        IsGrounded          ;
-    public  int         JumpCooldown        ;
-    public  double      JumpPeakTime        ;
-    private Vector3     JumpDisplacement    ;
-    public  float       CoyoteTimeThreshold ;
 
 
     [Header("Stamina")]
 
-    public  float   Stamina                     ; // cannot be 0 otherwise player stutters
-    public  float   MaxStamina                  ;
-    public  float   StaminaThreshold            ;
-    public  float   StaminaRegenTime            ;
-    public  bool    RegenningStamina            ;
-    public  int     StaminaRegenTimeout         ;
+    public  float   Stamina                     = 100       ; // cannot be 0 otherwise player stutters
+    public  float   MaxStamina                  = 100       ;
+    public  float   StaminaRegenTime            = 10000     ;
+    public  int     StaminaRegenTimeout         = 1000      ;
 
     // CONSUMPTIONS:
-
+    public  int     StaminaJumpConsumption      = 40    ;
+    public  int     StaminaStrafeConsumption    = 5     ;
+    // STATUS:
+    public  bool    RegenningStamina            ;
     private bool    CanAirStrafe                ;
     public  bool    UsingStamina                ;
-    public  int     StaminaJumpConsumption      ;
-    public  int     StaminaStrafeConsumption    ;
 
     public override void OnEnable       () {
         GroundCheck.CollisionEnter  += GroundCheckEnter;
@@ -120,7 +117,7 @@ public class PlayerController : Script
         
         UsingStamina = UsingStamina ? true : RunningInput;
 
-        Direction   *= MovementSpeed * (RunningInput ? RunSpeedMultiplier : 1);
+        Direction   *= MovementSpeed * (RunningInput ? RunSpeedMultiplier : 1) * ( !IsGrounded ?  MovementAirMultiplier : 1);
 
         Direction   += JumpDisplacement ;
 
@@ -182,7 +179,7 @@ public class PlayerController : Script
 
     private void StaminaManager () {
         
-        if (Stamina < StaminaThreshold && !RegenningStamina)
+        if (!RegenningStamina)
             _ = RegenStamina();
         
         CanAirStrafe = !IsGrounded && Stamina > 0 && (HorizontalInput != 0 || VerticalInput != 0);
