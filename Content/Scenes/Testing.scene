@@ -542,6 +542,92 @@
 }
 		},
 		{
+			"ID": "08dca002087c15062e55bf0af8e212fa",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "08dc9886441e6cfd5aeb9ac63e56b3d2",
+			"Name": "DEBUGSPEED",
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "4508d98f4aa1f0bd59362b81d47e38f4",
+		"Size": 9.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 100.0,
+		"Top": 0.0,
+		"Bottom": 20.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
 			"ID": "08dc990c26852f74ecf21c38aad8ee2c",
 			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
 			"PrefabObjectID": "08dc990c254c9d44ec0d2c71a1e7916a",
@@ -549,7 +635,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 42.298187255859378,
-					"Y": 155.0,
+					"Y": 160.0,
 					"Z": 0.8947601318359375
 				}
 			}
@@ -561,28 +647,15 @@
 			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
 			"V": {
 	"Controller": "08dc990c26852f74ecf21c38aad8ee2c",
-	"SFX_Unavailable": "08dc990d332ad58ef761baf513350eee",
-	"StaminaBar": "08dc988644bb5b7d5c20739b4a672bad",
+	"SFX_Unavailable": "08dca0010392bf060cb99701a8c86df5",
 	"GroundCheck": "08dc990c268aaccbecf21c3daad8ee9c",
-	"Gravity": "f0985a84476a0a1de5f3fc97b64532b3",
-	"MovementSpeed": 250.0,
-	"RunSpeedMultiplier": 1.5,
-	"MovementAirMultiplier": 1.5,
-	"JumpForce": 125.0,
-	"JumpCooldown": 250,
-	"JumpPeakTime": 0.45,
-	"Stamina": 100.0,
-	"MaxStamina": 100.0,
-	"StaminaThreshold": 100.0,
-	"StaminaRegenTime": 10000.0,
-	"StaminaRegenTimeout": 2500,
-	"StaminaJumpConsumption": 25,
-	"StaminaStrafeConsumption": 5
+	"Gravity": "08dca00103932ffe0cb99726a8c86f71"
 }
 		},
 		{
-			"ID": "f0985a84476a0a1de5f3fc97b64532b3",
-			"TypeName": "Game.LinearGravity",
+			"ID": "08dca00103932ffe0cb99726a8c86f71",
+			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
+			"PrefabObjectID": "08dc9f83105341a457c52680d7aedd3d",
 			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
 			"V": {}
 		},
@@ -615,10 +688,10 @@
 			"ParentID": "08dc990c2689c5e5ecf21c3daad8ee99"
 		},
 		{
-			"ID": "08dc990d332ad58ef761baf513350eee",
-			"TypeName": "FlaxEngine.AudioSource",
-			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
-			"Name": "AudioSource"
+			"ID": "08dca0010392bf060cb99701a8c86df5",
+			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
+			"PrefabObjectID": "08dc9f831052faff57c5267fd7aedd33",
+			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c"
 		}
 	]
 }

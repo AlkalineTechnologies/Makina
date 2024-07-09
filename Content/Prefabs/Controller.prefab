@@ -7,7 +7,8 @@
 		"ID": "08dc990c254c9d44ec0d2c71a1e7916a",
 		"TypeName": "FlaxEngine.CharacterController",
 		"Name": "Player",
-		"Layer": 1
+		"Layer": 1,
+		"Height": 180.0
 	},
 	{
 		"ID": "08dc990c254d03d8ec0d2c72a1e7917a",
@@ -15,9 +16,23 @@
 		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
 		"V": {
 	"Controller": "08dc990c254c9d44ec0d2c71a1e7916a",
+	"SFX_Unavailable": "08dc9f831052faff57c5267fd7aedd33",
 	"StaminaBar": "08dc988644bb5b7d5c20739b4a672bad",
-	"GroundCheck": "08dc990c2551020cec0d2c73a1e79184"
+	"DEBUG_SPEED": "08dca002087c15062e55bf0af8e212fa",
+	"GroundCheck": "08dc990c2551020cec0d2c73a1e79184",
+	"Gravity": "08dc9f83105341a457c52680d7aedd3d",
+	"MovementSpeed": 350.0,
+	"RunSpeedMultiplier": 1.5,
+	"JumpPeakTime": 0.5,
+	"StaminaRegenTimeout": 2500,
+	"StaminaJumpConsumption": 25
 }
+	},
+	{
+		"ID": "08dc9f83105341a457c52680d7aedd3d",
+		"TypeName": "Game.LinearGravity",
+		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
+		"V": {}
 	},
 	{
 		"ID": "08dc990c254e04d5ec0d2c72a1e7917d",
@@ -37,7 +52,8 @@
 		"TypeName": "Game.Camera",
 		"ParentID": "08dc990c254e04d5ec0d2c72a1e7917d",
 		"V": {
-	"CameraActor": "08dc990c254e04d5ec0d2c72a1e7917d"
+	"CameraActor": "08dc990c254e04d5ec0d2c72a1e7917d",
+	"Player": "08dc990c254c9d44ec0d2c71a1e7916a"
 }
 	},
 	{
@@ -48,7 +64,7 @@
 		"Transform": {
 			"Translation": {
 				"X": 0.0,
-				"Y": -70.0,
+				"Y": -90.0,
 				"Z": 0.0
 			},
 			"Orientation": {
@@ -70,6 +86,12 @@
 		"Name": "ContactSphere",
 		"Layer": 3,
 		"Radius": 60.0
+	},
+	{
+		"ID": "08dc9f831052faff57c5267fd7aedd33",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
+		"Name": "AudioSource"
 	}
 ]
 }

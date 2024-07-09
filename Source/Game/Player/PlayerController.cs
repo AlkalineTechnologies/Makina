@@ -15,11 +15,12 @@ public class PlayerController : Script
 
     [Header("References")]
 
-    public CharacterController  Controller          ;
-    public AudioSource          SFX_Unavailable     ;
-    public UIControl            StaminaBar          ;
-    public Collider             GroundCheck         ;
-    public  LinearGravity       Gravity             ;   
+    public  CharacterController     Controller          ;
+    public  AudioSource             SFX_Unavailable     ;
+    public  UIControl               StaminaBar          ;
+    public  UIControl               DEBUG_SPEED         ;
+    public  Collider                GroundCheck         ;
+    public  LinearGravity           Gravity             ;   
     
 
     [Header("Movement")]
@@ -27,15 +28,21 @@ public class PlayerController : Script
     public  float            MovementSpeed           = 250f                 ;
     public  float            RunSpeedMultiplier      = 1.2f                 ;
     public  float            MovementAirMultiplier   = 1.5f                 ;
+    public  float            CrouchSpeedMultiplier    = 0.7f                ;
+    public  float            CrouchHeight            = 125                  ;
     private Vector3          Direction               = new Vector3(0,0,0)   ;
+    private Vector3          _PrevPosition           = new Vector3(0,0,0)   ;
     
 
     [Header("Inputs")]
 
-    private bool    JumpInput       ;
-    public  bool    RunningInput    ;
-    private float   VerticalInput   ;
-    private float   HorizontalInput ;
+    private bool    JumpInput           ;
+    public  bool    RunningInput        ;
+    public  bool    CrouchInput         ;
+    private float   VerticalInput       ;
+    private float   HorizontalInput     ;
+
+    
 
 
     [Header("Jumping")]
@@ -46,10 +53,6 @@ public class PlayerController : Script
     public  int         JumpCooldown        = 250           ;
     public  double      JumpPeakTime        = 0.45          ;
     private Vector3     JumpDisplacement    = Vector3.Zero  ;
-    // STATUS:
-    public  bool        Jumping             ;
-    public  bool        IsGrounded          ;
-
 
     [Header("Stamina")]
 
@@ -61,21 +64,29 @@ public class PlayerController : Script
     // CONSUMPTIONS:
     public  int     StaminaJumpConsumption      = 40    ;
     public  int     StaminaStrafeConsumption    = 5     ;
+    
+    
+    [Header("State Management")]
     // STATUS:
-    public  bool    RegenningStamina            ;
+    private bool    Sliding                     ;
     private bool    CanAirStrafe                ;
+    public  bool    RegenningStamina            ;
     public  bool    UsingStamina                ;
+    public  bool    Crouching                   ;
+    public  bool    Jumping                     ;
+    public  bool    IsGrounded                  ;
+
 
     public override void OnEnable       () {
+        _PrevPosition = Actor.Position;
         GroundCheck.CollisionEnter  += GroundCheckEnter;
         GroundCheck.CollisionExit   += GroundCheckExit;
-
+        
     }
     public override void OnDisable      () {
         GroundCheck.CollisionEnter  -= GroundCheckEnter;
         GroundCheck.CollisionExit   -= GroundCheckExit;
     }
-
 
     public override void OnStart        () { 
         if (Actor != null) {
@@ -85,21 +96,30 @@ public class PlayerController : Script
     }
 
     public override void OnUpdate       () { 
-        HandleInput    (); 
-        MovePlayer     ();   
-        UpdateJump     ();
-        StaminaManager ();
+        HandleInput     (); 
+        MovePlayer      ();   
+        UpdateJump      ();
+        StaminaManager  ();
+        CrouchManager   ();
+
+        
 
         // * Update UI
-        StaminaBar.Get<ProgressBar>().Value = Stamina / MaxStamina;
+        StaminaBar .Get<ProgressBar> ().Value    = Stamina / MaxStamina                              ;
+        DEBUG_SPEED.Get<Label>       ().Text     = "Speed: " + ( (int) CalculateSpeed() ).ToString() ;
         
     }
     
     private void HandleInput            () {
-        JumpInput       = Input.GetAction   (   "Jump"          );
-        RunningInput    = Input.GetAction   (   "Run"           );
-        VerticalInput   = Input.GetAxis     (   "Vertical"      );
-        HorizontalInput = Input.GetAxis     (   "Horizontal"    );
+
+        JumpInput           = Input.GetAction   (   "Jump"          );
+        RunningInput        = Input.GetAction   (   "Run"           );
+        VerticalInput       = Input.GetAxis     (   "Vertical"      );
+        HorizontalInput     = Input.GetAxis     (   "Horizontal"    );
+        HorizontalInput     = Input.GetAxis     (   "Horizontal"    );
+        CrouchInput         = Input.GetAction   (   "Crouch"        );
+
+        if (CrouchInput) Crouching = !Crouching;
     }
 
     void MovePlayer(){
@@ -108,23 +128,34 @@ public class PlayerController : Script
         Direction = ( Transform.Forward * VerticalInput ) + ( Transform.Right * HorizontalInput );
         Direction.Normalize();
         
-        // Collision check
-        // if ( Physics.RayCast( Actor.Position, Transform.Down, out RayCastHit hitInfo, GroundDetectionRayLength, CollisionMask ) ) {
-        //     IsGrounded = true;
-        // } else {  IsGrounded = false; }
+        if ( JumpInput  )   JumpDispatch    ();
         
-        if (JumpInput) JumpDispatch();
         
         UsingStamina = UsingStamina ? true : RunningInput;
 
-        Direction   *= MovementSpeed * (RunningInput ? RunSpeedMultiplier : 1) * ( !IsGrounded ?  MovementAirMultiplier : 1);
+        // Multipliers for speed
+        Direction   *= MovementSpeed * (RunningInput ? RunSpeedMultiplier : 1) * ( !IsGrounded ?  MovementAirMultiplier : 1) * (Crouching ? CrouchSpeedMultiplier : 1);
 
-        Direction   += JumpDisplacement ;
 
 
         Controller.Move(
-            Direction * ((Stamina > 0 || IsGrounded) ? Time.DeltaTime : 0)
+            ( Direction + JumpDisplacement ) * ( (Stamina > 0 || IsGrounded) ? Time.DeltaTime : 0 )
         );
+
+    }
+
+    private void CrouchManager () {
+
+        float LerpSpeed = Time.DeltaTime * 10;
+
+        Controller.Height = Crouching ? CrouchHeight : 180;
+        
+        Actor.Scale = Vector3.Lerp(
+            Actor.Scale, 
+            new Vector3(1, Crouching ? (CrouchHeight/180) : 1, 1), 
+            LerpSpeed
+        );
+        // TODO: SETUP CROUCH TOGGLE
 
     }
 
@@ -132,15 +163,16 @@ public class PlayerController : Script
     private void JumpDispatch() {
         // When you can't jump: no stamina, not grounded, and not within coyote time
         if (Stamina - StaminaJumpConsumption <= 0 && !IsGrounded) {
-            
+            // Play SFX and flash the stamina bar
             var currentColor = StaminaBar.Get<ProgressBar>().BarColor;
+            
             StaminaBar.Get<ProgressBar>().BarColor = Color.Red;
+            
             SFX_Unavailable.Play();
             
             Task.Run(async () => {
                 await Task.Delay(100);
                 StaminaBar.Get<ProgressBar>().BarColor = currentColor;
-
             });
             
             return;
@@ -157,6 +189,8 @@ public class PlayerController : Script
     private void UpdateJump() {
         if (!Jumping) return;
 
+        Crouching = false;
+
         jumpTimeElapsed += Time.DeltaTime;  
         
         double progress  = jumpTimeElapsed / JumpPeakTime;
@@ -166,8 +200,6 @@ public class PlayerController : Script
         if (progress    >= 0.5) force *= -1;
 
         JumpDisplacement = Transform.Up * force;
-
-        // Debug.Log((int)(progress * 100) + "%\t\tpos:\t" + Actor.Position.Y + "\t\tDisplacement:\t" + JumpDisplacement );
 
         if (jumpTimeElapsed >= JumpPeakTime) {
             Jumping             = false;
@@ -196,8 +228,9 @@ public class PlayerController : Script
         Stamina = Math.Clamp(
             // The base air strafe count is reduced by a consumption rate, which is modified by various factors.
             Stamina - ( 
-                ( CanAirStrafe && RunningInput ? (RunSpeedMultiplier * StaminaStrafeConsumption) : StaminaStrafeConsumption )
-                    * Time.DeltaTime
+                    
+                    ( CanAirStrafe && RunningInput ? (RunSpeedMultiplier * StaminaStrafeConsumption) : StaminaStrafeConsumption ) * Time.DeltaTime
+                
                 ),
             // The resulting value is clamped between 1 and AirStrafeMax.
             1, MaxStamina
@@ -230,8 +263,14 @@ public class PlayerController : Script
 
     }
 
-    void GroundCheckEnter (Collision collision) { IsGrounded = true; }
+    float CalculateSpeed () {
+        float Speed = (Actor.Position - _PrevPosition).Length / Time.DeltaTime;
+        _PrevPosition = Actor.Position;
+        return Speed;
+    }
 
-    void GroundCheckExit (Collision collision) { IsGrounded = false; }
+    void GroundCheckEnter (Collision collision) { IsGrounded = true ; }
+
+    void GroundCheckExit  (Collision collision) { IsGrounded = false; }
 
 }
