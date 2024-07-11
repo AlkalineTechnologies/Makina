@@ -14,6 +14,8 @@ public class Camera : Script
     public float CameraYSpeed = 10f;
     public float MouseX;
     public float MouseY;
+
+    private bool _isLocked = true;
     
     public override void OnEnable () { 
         Screen.CursorLock       = CursorLockMode.Locked ;
@@ -28,8 +30,9 @@ public class Camera : Script
         
         //! ONLY FOR TESTING
         if ( Input.GetKey( KeyboardKeys.Escape ) ) {
-            Screen.CursorLock       = CursorLockMode.None ;
-            Screen.CursorVisible    = true                ;
+            _isLocked = !_isLocked;
+            Screen.CursorLock       = _isLocked ? CursorLockMode.Locked : CursorLockMode.None   ;
+            Screen.CursorVisible    = !_isLocked                                                ;
         }
         
         Player.LocalOrientation = Quaternion.Euler(0, MouseY, 0);
