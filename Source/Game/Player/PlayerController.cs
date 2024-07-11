@@ -17,8 +17,9 @@ public class PlayerController : Script
 
     public  CharacterController     Controller          ;
     public  AudioSource             SFX_Unavailable     ;
-    public  UIControl               StaminaBar          ;
     public  UIControl               DEBUG_SPEED         ;
+    public  UIControl               StaminaBar          ;
+    public  Color                   StamDefaultColor    ;
     public  Collider                GroundCheck         ;
     public  LinearGravity           Gravity             ;   
     
@@ -164,15 +165,13 @@ public class PlayerController : Script
         // When you can't jump: no stamina, not grounded, and not within coyote time
         if (Stamina - StaminaJumpConsumption <= 0 && !IsGrounded) {
             // Play SFX and flash the stamina bar
-            var currentColor = StaminaBar.Get<ProgressBar>().BarColor;
-            
             StaminaBar.Get<ProgressBar>().BarColor = Color.Red;
             
             SFX_Unavailable.Play();
             
             Task.Run(async () => {
                 await Task.Delay(100);
-                StaminaBar.Get<ProgressBar>().BarColor = currentColor;
+                StaminaBar.Get<ProgressBar>().BarColor = StamDefaultColor;
             });
             
             return;
