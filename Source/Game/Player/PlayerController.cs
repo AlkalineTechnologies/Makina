@@ -155,8 +155,12 @@ public class PlayerController : Script
         return Speed;
     }
 
-    void GroundCheckEnter (Collision collision) { StateMachine.IsGrounded = true ; }
+    private int _GroundCheckCounter = 0;
+    void GroundCheckEnter (Collision collision) { StateMachine.IsGrounded = true ; _GroundCheckCounter++; }
 
-    void GroundCheckExit  (Collision collision) { StateMachine.IsGrounded = false; }
+    void GroundCheckExit  (Collision collision) { 
+        if (_GroundCheckCounter ==0 ) StateMachine.IsGrounded = false;  
+        _GroundCheckCounter--; 
+    }
 
 }
