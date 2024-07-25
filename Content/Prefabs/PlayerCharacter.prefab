@@ -1,0 +1,100 @@
+{
+	"ID": "08dca42a290e00ca430ecec4dffde5c6",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6512,
+	"Data": [
+	{
+		"ID": "08dca42a2906df1e430ece44dffde0b1",
+		"TypeName": "FlaxEngine.RigidBody",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "PlayerCharacter",
+		"Layer": 1,
+		"Mass": 1953.0235595703128,
+		"Constraints": 40
+	},
+	{
+		"ID": "08dca42a29073678430ece44dffde0c4",
+		"TypeName": "Game.PlayerMovement",
+		"ParentID": "08dca42a2906df1e430ece44dffde0b1",
+		"V": {
+			"Controller": "08dca42a2906df1e430ece44dffde0b1",
+			"SFX_Unavailable": "08dca42a2909d446430ece45dffde0c9",
+			"DEBUG_SPEED": "08dca002087c15062e55bf0af8e212fa",
+			"StaminaBar": "08dc988644bb5b7d5c20739b4a672bad",
+			"GroundCheck": "08dca42a290d7d54430ece46dffde0d2",
+			"Gravity": "08dca42a2908d05f430ece45dffde0c7",
+			"SlopeDetectionMask": {
+				"Mask": 5
+			}
+		}
+	},
+	{
+		"ID": "08dca42a2908d05f430ece45dffde0c7",
+		"TypeName": "Game.LinearGravity",
+		"ParentID": "08dca42a2906df1e430ece44dffde0b1",
+		"V": {}
+	},
+	{
+		"ID": "08dca42a2909d446430ece45dffde0c9",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "08dca42a2906df1e430ece44dffde0b1",
+		"Name": "AudioPlayer",
+		"Layer": 1
+	},
+	{
+		"ID": "08dca42a290a8b3f430ece45dffde0cc",
+		"TypeName": "FlaxEngine.Camera",
+		"ParentID": "08dca42a2906df1e430ece44dffde0b1",
+		"Name": "PlayerCamera",
+		"Layer": 1
+	},
+	{
+		"ID": "08dca42a290b0f1b430ece45dffde0cf",
+		"TypeName": "FlaxEngine.CapsuleCollider",
+		"ParentID": "08dca42a2906df1e430ece44dffde0b1",
+		"Name": "PlayerCollider",
+		"Transform": {
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.7071068286895752,
+				"W": 0.7071068286895752
+			}
+		},
+		"Layer": 1,
+		"Radius": 50.0,
+		"Height": 182.0
+	},
+	{
+		"ID": "08dca42a290c2002430ece45dffde0d1",
+		"TypeName": "FlaxEngine.RigidBody",
+		"ParentID": "08dca42a290b0f1b430ece45dffde0cf",
+		"Name": "GroundDetection",
+		"Transform": {
+			"Translation": {
+				"X": -94.2403564453125,
+				"Y": 0.00001123432502936339,
+				"Z": 0.0
+			}
+		},
+		"Layer": 3,
+		"Mass": 904.77880859375,
+		"Constraints": 63
+	},
+	{
+		"ID": "08dca42a290d7d54430ece46dffde0d2",
+		"TypeName": "FlaxEngine.SphereCollider",
+		"ParentID": "08dca42a290c2002430ece45dffde0d1",
+		"Name": "ContactCollider",
+		"Transform": {
+			"Translation": {
+				"X": 6.711594581604004,
+				"Y": -8.000843081390485e-7,
+				"Z": 0.0
+			}
+		},
+		"Layer": 3,
+		"Radius": 60.0
+	}
+]
+}

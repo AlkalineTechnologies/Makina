@@ -65,16 +65,16 @@
 			"Name": "Floor",
 			"Transform": {
 				"Scale": {
-					"X": 4.0,
-					"Y": 0.5,
-					"Z": 4.0
+					"X": 50.0,
+					"Y": 0.25,
+					"Z": 50.0
 				}
 			},
 			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -649,7 +649,8 @@
 	"Controller": "08dc990c26852f74ecf21c38aad8ee2c",
 	"SFX_Unavailable": "08dca0010392bf060cb99701a8c86df5",
 	"GroundCheck": "08dc990c268aaccbecf21c3daad8ee9c",
-	"Gravity": "08dca00103932ffe0cb99726a8c86f71"
+	"Gravity": "08dca00103932ffe0cb99726a8c86f71",
+	"MovementAirMultiplier": 1.8
 }
 		},
 		{

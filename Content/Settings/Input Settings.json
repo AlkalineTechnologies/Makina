@@ -62,7 +62,7 @@
 		},
 		{
 			"Name": "Run",
-			"Mode": 0,
+			"Mode": 1,
 			"Key": 16,
 			"MouseButton": 0,
 			"GamepadButton": 13,
