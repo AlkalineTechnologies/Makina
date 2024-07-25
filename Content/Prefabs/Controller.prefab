@@ -7,6 +7,7 @@
 		"ID": "08dc990c254c9d44ec0d2c71a1e7916a",
 		"TypeName": "FlaxEngine.CharacterController",
 		"Name": "Player",
+		"StaticFlags": 0,
 		"Layer": 1,
 		"Height": 180.0
 	},
@@ -17,22 +18,55 @@
 		"V": {
 	"Controller": "08dc990c254c9d44ec0d2c71a1e7916a",
 	"SFX_Unavailable": "08dc9f831052faff57c5267fd7aedd33",
-	"StaminaBar": "08dc988644bb5b7d5c20739b4a672bad",
 	"DEBUG_SPEED": "08dca002087c15062e55bf0af8e212fa",
 	"GroundCheck": "08dc990c2551020cec0d2c73a1e79184",
-	"Gravity": "08dc9f83105341a457c52680d7aedd3d",
 	"MovementSpeed": 350.0,
 	"RunSpeedMultiplier": 1.5,
-	"JumpPeakTime": 0.5,
-	"StaminaRegenTimeout": 2500,
-	"StaminaJumpConsumption": 25
+	"InputSystem": "08dcabe851449d6d9e6a1ba4f1e0aab6",
+	"HUD": "08dcabe85145d0c29e6a1ba5f1e0aab9",
+	"StaminaManager": "08dcabe851433d159e6a1ba4f1e0aab2",
+	"StateMachine": "08dcabe851422fec9e6a1ba3f1e0aaa5"
 }
 	},
 	{
 		"ID": "08dc9f83105341a457c52680d7aedd3d",
 		"TypeName": "Game.LinearGravity",
 		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
+		"V": {
+	"Object": "08dc990c254c9d44ec0d2c71a1e7916a"
+}
+	},
+	{
+		"ID": "08dcabe851422fec9e6a1ba3f1e0aaa5",
+		"TypeName": "Game.PlayerStateMachine",
+		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
 		"V": {}
+	},
+	{
+		"ID": "08dcabe851449d6d9e6a1ba4f1e0aab6",
+		"TypeName": "Game.PlayerInputSystem",
+		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
+		"V": {
+	"StateMachine": "08dcabe851422fec9e6a1ba3f1e0aaa5"
+}
+	},
+	{
+		"ID": "08dcabe851433d159e6a1ba4f1e0aab2",
+		"TypeName": "Game.StaminaManager",
+		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
+		"V": {
+	"StateMachine": "08dcabe851422fec9e6a1ba3f1e0aaa5",
+	"MovementController": "08dc990c254d03d8ec0d2c72a1e7917a"
+}
+	},
+	{
+		"ID": "08dcabe85145d0c29e6a1ba5f1e0aab9",
+		"TypeName": "Game.PlayerHUD",
+		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
+		"V": {
+	"StaminaManager": "08dcabe851433d159e6a1ba4f1e0aab2",
+	"StaminaBar": "08dc988644bb5b7d5c20739b4a672bad"
+}
 	},
 	{
 		"ID": "08dc990c254e04d5ec0d2c72a1e7917d",
@@ -45,7 +79,8 @@
 				"Y": 100.0,
 				"Z": 0.0
 			}
-		}
+		},
+		"StaticFlags": 0
 	},
 	{
 		"ID": "08dc990c254fe149ec0d2c73a1e79180",
@@ -74,6 +109,7 @@
 				"W": 0.38268330693244936
 			}
 		},
+		"StaticFlags": 0,
 		"Layer": 3,
 		"Mass": 904.77880859375,
 		"Constraints": 63,
@@ -84,6 +120,7 @@
 		"TypeName": "FlaxEngine.SphereCollider",
 		"ParentID": "08dc990c25509c6aec0d2c73a1e79182",
 		"Name": "ContactSphere",
+		"StaticFlags": 0,
 		"Layer": 3,
 		"Radius": 60.0
 	},
@@ -91,7 +128,8 @@
 		"ID": "08dc9f831052faff57c5267fd7aedd33",
 		"TypeName": "FlaxEngine.AudioSource",
 		"ParentID": "08dc990c254c9d44ec0d2c71a1e7916a",
-		"Name": "AudioSource"
+		"Name": "AudioSource",
+		"StaticFlags": 0
 	}
 ]
 }
