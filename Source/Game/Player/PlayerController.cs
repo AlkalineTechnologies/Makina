@@ -31,7 +31,7 @@ public class PlayerController : Script
     [Header("Player Values")]
     public  float            MovementSpeed              { get; set; }  = 250f                ;
     public  float            CrouchHeight               { get; set; }  = 125                 ;
-    private float            _InitialHeight             { get; set; }  = 180f                ;
+    public  float            StandingHeight             { get; set; }  = 180f                ;
     private Vector3          PushForce                  { get; set; }  = Vector3.Zero        ;
     private Vector3          _PrevPosition              { get; set; }  = Vector3.Zero        ;
 
@@ -58,7 +58,7 @@ public class PlayerController : Script
             Controller = Actor.As<CharacterController> ();
 
         } else { Debug.LogError("null actor, please assign an actor to the script."); }
-        _InitialHeight = Controller.Height; 
+
     }
 
     public override void OnUpdate       () { 
@@ -102,11 +102,11 @@ public class PlayerController : Script
 
         float LerpSpeed = Time.DeltaTime * 10;
 
-        Controller.Height = StateMachine.Crouching ? CrouchHeight : _InitialHeight;
+        Controller.Height = StateMachine.Crouching ? CrouchHeight : StandingHeight;
         
         Actor.Scale = Vector3.Lerp(
             Actor.Scale, 
-            new Vector3(1, StateMachine.Crouching ? (CrouchHeight/_InitialHeight) : 1, 1), 
+            new Vector3(1, StateMachine.Crouching ? (CrouchHeight/StandingHeight) : 1, 1), 
             LerpSpeed
         );
 
