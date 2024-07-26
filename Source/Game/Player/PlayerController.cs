@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using FlaxEditor;
 using FlaxEngine;
@@ -13,41 +13,33 @@ public class PlayerController : Script
 {
     /// <inheritdoc/>
 
-    [Header("References")]
-
-    public  CharacterController     Controller          ;
-    public  AudioSource             SFX_Unavailable     ;
-    public  UIControl               DEBUG_SPEED         ;
-    public  UIControl               StaminaBar          ;
-    public  Color                   StamDefaultColor    ;
-    public  Collider                GroundCheck         ;
-    public  LinearGravity           Gravity             ;   
+    [Header("Player References")]
+    public  CharacterController     Controller          { get; set; }
+    public  AudioSource             SFX_Unavailable     { get; set; }
+    public  UIControl               DEBUG_SPEED         { get; set; }
+    public  UIControl               StaminaBar          { get; set; }
+    public  Color                   StamDefaultColor    { get; set; }
+    public  Collider                GroundCheck         { get; set; }
+    public  LinearGravity           Gravity             { get; set; }   
     
+    [Header("Component References")]      
+    public  PlayerInputSystem   InputSystem             { get; set; }
+    public  PlayerHUD           HUD                     { get; set; }
+    public  StaminaManager      StaminaManager          { get; set; }
+    public  PlayerStateMachine  StateMachine            { get; set; }
 
-    [Header("Movement")]
+    [Header("Player Values")]
+    public  float            MovementSpeed              { get; set; }  = 250f                ;
+    public  float            CrouchHeight               { get; set; }  = 125                 ;
+    private float            _InitialHeight             { get; set; }  = 180f                ;
+    private Vector3          PushForce                  { get; set; }  = Vector3.Zero        ;
+    private Vector3          _PrevPosition              { get; set; }  = Vector3.Zero        ;
 
-    public  float            MovementSpeed         { get; set; }  = 250f                ;
-    public  float            RunSpeedMultiplier    { get; set; }  = 1.2f                ;
-    public  float            MovementAirMultiplier { get; set; }  = 1.5f                ;
-    public  float            CrouchSpeedMultiplier { get; set; }  = 0.7f                ;
-    public  float            CrouchHeight          { get; set; }  = 125                 ;
-    private float           _InitialHeight         { get; set; }  = 180f                ;
-    private Vector3          PushForce             { get; set; }  = Vector3.Zero        ;
-    private Vector3          _PrevPosition         { get; set; }  = Vector3.Zero        ;
-    
+    [Header("Multipliers")]     
+    public  float            RunSpeedMultiplier         { get; set; }  = 1.2f                ;
+    public  float            MovementAirMultiplier      { get; set; }  = 1.5f                ;
+    public  float            CrouchSpeedMultiplier      { get; set; }  = 0.7f                ;
 
-    [Header("Inputs")]
-    public PlayerInputSystem InputSystem    { get; set; }
-    
-    [Header("UI")]
-    public  PlayerHUD       HUD             { get; set; }
-
-    [Header("Stamina")]
-    public StaminaManager   StaminaManager  { get; set; }
-    
-
-    [Header("State Management")]
-    public PlayerStateMachine StateMachine  { get; set; }
 
 
     public override void OnEnable       () {
@@ -65,7 +57,7 @@ public class PlayerController : Script
         if (Actor != null) {
             Controller = Actor.As<CharacterController> ();
 
-        } else { Debug.LogError("null actor, please assign an actor to the script."); } 
+        } else { Debug.LogError("null actor, please assign an actor to the script."); }
         _InitialHeight = Controller.Height; 
     }
 
@@ -88,8 +80,6 @@ public class PlayerController : Script
             
             Vector3 Direction = ( Transform.Right *  InputSystem.MovementInput.X) + ( Transform.Forward *  InputSystem.MovementInput.Z);
             Direction.Normalize();
-    
-            Debug.Log("Normalized: " + Direction);
     
             if ( InputSystem.JumpInput  )   JumpDispatch    ();
             
