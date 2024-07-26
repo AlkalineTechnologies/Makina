@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using FlaxEditor;
 using FlaxEngine;
@@ -17,8 +17,6 @@ public class PlayerController : Script
     public  CharacterController     Controller          { get; set; }
     public  AudioSource             SFX_Unavailable     { get; set; }
     public  UIControl               DEBUG_SPEED         { get; set; }
-    public  UIControl               StaminaBar          { get; set; }
-    public  Color                   StamDefaultColor    { get; set; }
     public  Collider                GroundCheck         { get; set; }
     public  LinearGravity           Gravity             { get; set; }   
     
@@ -116,16 +114,9 @@ public class PlayerController : Script
     private void JumpDispatch() {
         // When you can't jump: no stamina, not grounded, and not within coyote time
         if (StaminaManager.Stamina - StaminaManager.StaminaJumpConsumption <= 0 && !StateMachine.IsGrounded) {
-            //! TODO FOR TOMORROW: make this into a function within PlayerHUD 
-            // Play SFX and flash the stamina bar
-            StaminaBar.Get<ProgressBar>().BarColor = Color.Red;
-            
             SFX_Unavailable.Play();
-            
-            Task.Run(async () => {
-                await Task.Delay(100);
-                StaminaBar.Get<ProgressBar>().BarColor = StamDefaultColor;
-            });
+
+            HUD.Effect_Flash_ProgressBar(HUD.StaminaBarFlashColor, HUD.StaminaBarDefaultColor, HUD.StaminaBarFlashDuration);
             
             return;
         }
@@ -151,7 +142,6 @@ public class PlayerController : Script
     void GroundCheckEnter (Collision collision) { StateMachine.IsGrounded = true ; _GroundCheckCounter++; }
 
     void GroundCheckExit  (Collision collision) { 
-        if (_GroundCheckCounter ==0 ) StateMachine.IsGrounded = false;  
         _GroundCheckCounter--; 
         if (_GroundCheckCounter == 0 ) StateMachine.IsGrounded = false;  
     }
