@@ -648,8 +648,13 @@
 			"V": {
 	"Controller": "08dc990c26852f74ecf21c38aad8ee2c",
 	"SFX_Unavailable": "08dca0010392bf060cb99701a8c86df5",
+	"DEBUG_SPEED": "08dca002087c15062e55bf0af8e212fa",
 	"GroundCheck": "08dc990c268aaccbecf21c3daad8ee9c",
 	"Gravity": "08dca00103932ffe0cb99726a8c86f71",
+	"InputSystem": "08dcad94038b8fc45024a3db1822b720",
+	"HUD": "08dcad94038aa1f75024a3bb1822b5e2",
+	"StaminaManager": "08dcad94038cf06a5024a4061822b8ce",
+	"StateMachine": "08dcad940389f2805024a38b1822b3f0",
 	"MovementAirMultiplier": 1.8
 }
 		},
@@ -659,6 +664,43 @@
 			"PrefabObjectID": "08dc9f83105341a457c52680d7aedd3d",
 			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
 			"V": {}
+		},
+		{
+			"ID": "08dcad940389f2805024a38b1822b3f0",
+			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
+			"PrefabObjectID": "08dcabe851422fec9e6a1ba3f1e0aaa5",
+			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
+			"V": {}
+		},
+		{
+			"ID": "08dcad94038b8fc45024a3db1822b720",
+			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
+			"PrefabObjectID": "08dcabe851449d6d9e6a1ba4f1e0aab6",
+			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
+			"V": {
+	"StateMachine": "08dcad940389f2805024a38b1822b3f0"
+}
+		},
+		{
+			"ID": "08dcad94038cf06a5024a4061822b8ce",
+			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
+			"PrefabObjectID": "08dcabe851433d159e6a1ba4f1e0aab2",
+			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
+			"V": {
+	"StateMachine": "08dcad940389f2805024a38b1822b3f0",
+	"MovementController": "08dc990c268651dfecf21c3caad8ee93",
+	"InputSystem": "08dcad94038b8fc45024a3db1822b720"
+}
+		},
+		{
+			"ID": "08dcad94038aa1f75024a3bb1822b5e2",
+			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
+			"PrefabObjectID": "08dcabe85145d0c29e6a1ba5f1e0aab9",
+			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
+			"V": {
+	"StaminaManager": "08dcad94038cf06a5024a4061822b8ce",
+	"StaminaBar": "08dc988644bb5b7d5c20739b4a672bad"
+}
 		},
 		{
 			"ID": "08dc990c26872ee3ecf21c3daad8ee95",
