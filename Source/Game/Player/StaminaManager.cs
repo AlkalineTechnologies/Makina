@@ -13,6 +13,7 @@ namespace Game;
 public class StaminaManager : Script{
     public PlayerStateMachine StateMachine      { get; set; }
     public PlayerController MovementController  { get; set; }
+    public PlayerInputSystem InputSystem        { get; set; }
 
     public float Stamina                        { get; set; }   = 100   ;
     public float MaxStamina                     { get; set; }   = 100   ;
@@ -29,7 +30,7 @@ public class StaminaManager : Script{
         if (!StateMachine.RegenningStamina)
             _ = RegenStamina();
 
-        StateMachine.CanAirStrafe = !StateMachine.IsGrounded && Stamina > 0;
+        StateMachine.CanAirStrafe = !StateMachine.IsGrounded && Stamina > 0 && InputSystem.MovementInput != Vector3.Zero;
 
         if (!StateMachine.CanAirStrafe) return;
 
