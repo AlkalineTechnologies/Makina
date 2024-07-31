@@ -67,7 +67,7 @@ public class PlayerController : Script
         
 
         // * Update UI
-        DEBUG_SPEED.Get<Label>().Text     = "Speed: " + ( (int) CalculateSpeed() ).ToString() +
+        DEBUG_SPEED.Get<Label>().Text     = "Speed: " + ( (int) CalculateSpeed().Length ).ToString() +
                                             "\t FPS: " + Math.Round(1 / Time.DeltaTime).ToString();
         
     }
@@ -132,8 +132,8 @@ public class PlayerController : Script
         //! a proper jump system.
     }
 
-    float CalculateSpeed () {
-        float Speed = (Actor.Position - _PrevPosition).Length / Time.DeltaTime;
+    public Vector3 CalculateSpeed () {
+        Vector3 Speed = (Actor.Position - _PrevPosition) / Time.DeltaTime;
         _PrevPosition = Actor.Position;
         return Speed;
     }

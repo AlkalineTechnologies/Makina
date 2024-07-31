@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -34,12 +34,14 @@ public class StaminaManager : Script{
 
         if (!StateMachine.CanAirStrafe) return;
 
-        // This code manages the deduction of air strafes based on certain conditions:
+        // This code manages the deduction of air strafes based on certain conditions,
+        // 1) The player must not be grounded.
+        // 2) One or multiple of the following conditions must be met:
         // * If the player is jumping
         // * If the player is running (this increases the rate of air strafe consumption)
         // * If the player is moving (normal rate of air strafe consumption)
         // * If the player is grounded (no air strafes are consumed)
-        // The resulting air strafe count is clamped between 0 and AirStrafeMax.
+        // The resulting air strafe count is clamped between 1 and MaxStamina.
         StateMachine.UsingStamina = true;
         Stamina = Math.Clamp(
             // The base air strafe count is reduced by a consumption rate, which is modified by various factors.
