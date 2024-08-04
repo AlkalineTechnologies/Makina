@@ -34,6 +34,8 @@ public class PlayerInputSystem : Script
         // TODO: Add Input modes for toggle and hold 
         if (CrouchInput) StateMachine.Crouching = !StateMachine.Crouching;
         if (RunningInput)  StateMachine.Running = !StateMachine.Running;
+        
+        StateMachine.Jumping = JumpInput;
 
         MovementInput = new Vector3(HorizontalInput, JumpInput ? 1:0 , VerticalInput);
         MovementInput.Normalize();

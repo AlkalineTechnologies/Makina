@@ -546,6 +546,13 @@
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "08dc9886441e6cfd5aeb9ac63e56b3d2",
 			"Name": "DEBUGSPEED",
+			"Transform": {
+				"Translation": {
+					"X": 19.0,
+					"Y": 25.0,
+					"Z": 0.0
+				}
+			},
 			"Control": "FlaxEngine.GUI.Label",
 			"Data": {
 	"Text": "",
@@ -564,7 +571,7 @@
 		"B": 1.0,
 		"A": 1.0
 	},
-	"HorizontalAlignment": 1,
+	"HorizontalAlignment": 0,
 	"VerticalAlignment": 1,
 	"Wrapping": 0,
 	"BaseLinesGapScale": 1.0,
@@ -598,9 +605,9 @@
 		"Y": 0.0
 	},
 	"Offsets": {
-		"Left": 0.0,
-		"Right": 100.0,
-		"Top": 0.0,
+		"Left": 19.0,
+		"Right": 250.0,
+		"Top": 25.0,
 		"Bottom": 20.0
 	},
 	"Scale": {
@@ -638,7 +645,10 @@
 					"Y": 160.0,
 					"Z": 0.8947601318359375
 				}
-			}
+			},
+			"RemovedObjects": [
+				"08dc9f83105341a457c52680d7aedd3d"
+			]
 		},
 		{
 			"ID": "08dc990c268651dfecf21c3caad8ee93",
@@ -650,20 +660,18 @@
 	"SFX_Unavailable": "08dca0010392bf060cb99701a8c86df5",
 	"DEBUG_SPEED": "08dca002087c15062e55bf0af8e212fa",
 	"GroundCheck": "08dc990c268aaccbecf21c3daad8ee9c",
-	"Gravity": "08dca00103932ffe0cb99726a8c86f71",
 	"InputSystem": "08dcad94038b8fc45024a3db1822b720",
 	"HUD": "08dcad94038aa1f75024a3bb1822b5e2",
 	"StaminaManager": "08dcad94038cf06a5024a4061822b8ce",
 	"StateMachine": "08dcad940389f2805024a38b1822b3f0",
-	"MovementAirMultiplier": 1.8
+	"MovementSpeed": 350.0,
+	"Gravity": {
+		"X": 0.0,
+		"Y": -1962.0,
+		"Z": 0.0
+	},
+	"RunSpeedMultiplier": 1.5
 }
-		},
-		{
-			"ID": "08dca00103932ffe0cb99726a8c86f71",
-			"PrefabID": "08dc990c255271b8ec0d2cd8a1e79578",
-			"PrefabObjectID": "08dc9f83105341a457c52680d7aedd3d",
-			"ParentID": "08dc990c26852f74ecf21c38aad8ee2c",
-			"V": {}
 		},
 		{
 			"ID": "08dcad940389f2805024a38b1822b3f0",
@@ -689,7 +697,8 @@
 			"V": {
 	"StateMachine": "08dcad940389f2805024a38b1822b3f0",
 	"MovementController": "08dc990c268651dfecf21c3caad8ee93",
-	"InputSystem": "08dcad94038b8fc45024a3db1822b720"
+	"InputSystem": "08dcad94038b8fc45024a3db1822b720",
+	"StaminaJumpConsumption": 20
 }
 		},
 		{
