@@ -32,13 +32,17 @@ public class PlayerHUD : Script
         StaminaBar.Get<ProgressBar>().Value = StaminaManager.Stamina / StaminaManager.MaxStamina ;
     }
 
+    private bool _IsFlashing = false;
     public void Effect_Flash_ProgressBar(Color ToColor, Color FromColor, float Duration) {
-        
+        if (_IsFlashing) return;
+        _IsFlashing = true;
         StaminaBar.Get<ProgressBar>().BarColor = ToColor;
         
+
         Task.Run( async () => {
             await Task.Delay(TimeSpan.FromSeconds(Duration));
             StaminaBar.Get<ProgressBar>().BarColor = FromColor;
+            _IsFlashing = false;
         });
         
     }
