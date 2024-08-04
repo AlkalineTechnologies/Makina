@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using FlaxEditor;
 using FlaxEngine;
 using FlaxEngine.GUI;
+using FlaxEngine.Utilities;
 
 namespace Game;
 
@@ -18,7 +19,6 @@ public class PlayerController : Script
     public  AudioSource             SFX_Unavailable     { get; set; }
     public  UIControl               DEBUG_SPEED         { get; set; }
     public  Collider                GroundCheck         { get; set; }
-    public  LinearGravity           Gravity             { get; set; }   
     
     [Header("Component References")]      
     public  PlayerInputSystem   InputSystem             { get; set; }
@@ -28,9 +28,12 @@ public class PlayerController : Script
 
     [Header("Player Values")]
     public  float            MovementSpeed              { get; set; }  = 250f                ;
+    public  float            JumpForce                  { get; set; }  = 1000                ;
     public  float            CrouchHeight               { get; set; }  = 125                 ;
     public  float            StandingHeight             { get; set; }  = 180f                ;
-    private Vector3          PushForce                  { get; set; }  = Vector3.Zero        ;
+    public  Vector3          VerticalForce              { get; set; }  = Vector3.Zero        ;
+    public  Vector3          PlayerSpeed                { get; set; }  = Vector3.Zero        ;
+    public  Vector3          Gravity                    { get; set; }  = Vector3.Down        ;
     private Vector3          _PrevPosition              { get; set; }  = Vector3.Zero        ;
 
     [Header("Multipliers")]     
@@ -60,41 +63,51 @@ public class PlayerController : Script
     }
 
     public override void OnUpdate       () { 
-        MovePlayer      ();   
-        UpdateJump      ();
+        MovePlayer      ();
         CrouchManager   ();
 
-        
+        PlayerSpeed = CalculateSpeed();
 
         // * Update UI
-        DEBUG_SPEED.Get<Label>().Text     = "Speed: " + ( (int) CalculateSpeed().Length ).ToString() +
-                                            "\t FPS: " + Math.Round(1 / Time.DeltaTime).ToString();
+        DEBUG_SPEED.Get<Label>().Text     = "Speed: " + PlayerSpeed.Length.ToString() +
+                                            "\t FPS: " + Math.Round(1 / Time.DeltaTime).ToString() +
+                                            "\t Speed V3: " + PlayerSpeed.ToString();
         
     }
     
     
+    public Vector3 Direction { get; set; } = Vector3.Zero;
+    public Vector3 momentum  { get; set; } = Vector3.Zero;
 
     void MovePlayer(){
+        //* This sections is responsible for moving the player and momentum
+        if (StateMachine.IsGrounded || InputSystem.MovementInput != Vector3.Zero) {
             
-            Vector3 Direction = ( Transform.Right *  InputSystem.MovementInput.X) + ( Transform.Forward *  InputSystem.MovementInput.Z);
-            Direction.Normalize();
-    
-            if ( InputSystem.JumpInput  )   JumpDispatch    ();
+            Direction = (Transform.Right * InputSystem.MovementInput.X) + (Transform.Forward * InputSystem.MovementInput.Z);
+            // This is more stable than using Vector3.Normalize for some damn reason.
+            Direction = Vector3.ClampLength(Direction, 0, 1);
             
-            
-            StateMachine.UsingStamina = StateMachine.UsingStamina || StateMachine.Running;
-    
-            // Multipliers for speed
-            Direction   *=                      MovementSpeed                * 
+
+            Direction *= MovementSpeed                * 
                 (StateMachine.Running       ?   RunSpeedMultiplier      : 1) * 
                 (!StateMachine.IsGrounded   ?   MovementAirMultiplier   : 1) * 
                 (StateMachine.Crouching     ?   CrouchSpeedMultiplier   : 1) ;
+
+            momentum = Direction; // Update momentum when grounded
+
+        } else { Direction = momentum * 0.85f; /* Use momentum when in the air */ }
+
+        if ( InputSystem.JumpInput ) ProcessJump();
+            
+        StateMachine.UsingStamina = StateMachine.UsingStamina || StateMachine.Running;
+
+        VerticalForce = Vector3.Lerp(VerticalForce, Gravity , Time.DeltaTime);
+        
+        Controller.Move(
+            ( Direction + VerticalForce ) * Time.DeltaTime
+        );
     
-            Controller.Move(
-                ( Direction + PushForce ) * Time.DeltaTime
-            );
-    
-        }
+    }
 
     private void CrouchManager () {
 
@@ -110,26 +123,18 @@ public class PlayerController : Script
 
     }
 
+    
 
-    private void JumpDispatch() {
-        // When you can't jump: no stamina, not grounded, and not within coyote time
-        if (StaminaManager.Stamina - StaminaManager.StaminaJumpConsumption <= 0 && !StateMachine.IsGrounded) {
+    private void ProcessJump() {
+        bool CanJump = StaminaManager.Stamina - StaminaManager.StaminaJumpConsumption > 0 || StateMachine.IsGrounded;
+        // When you can't jump: no stamina or not grounded
+        if (!CanJump) {
             SFX_Unavailable.Play();
-
             HUD.Effect_Flash_ProgressBar(HUD.StaminaBarFlashColor, HUD.StaminaBarDefaultColor, HUD.StaminaBarFlashDuration);
-            
             return;
-        }
-        
-        //! REMOVED for now in order to reimplement
-        //! a proper jump system.
-
-
-    }
-
-    private void UpdateJump() {
-        //! REMOVED for now in order to reimplement
-        //! a proper jump system.
+        } 
+        StateMachine.Jumping = true;
+        VerticalForce = Transform.Up * JumpForce;
     }
 
     public Vector3 CalculateSpeed () {
