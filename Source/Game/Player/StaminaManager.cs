@@ -50,7 +50,7 @@ public class StaminaManager : Script{
 
         if (InputSystem.JumpInput && StateMachine.Jumping) Stamina -= StaminaJumpConsumption ;
 
-        Stamina = Math.Clamp(Stamina, 0, MaxStamina);
+        Stamina = Math.Clamp(Stamina, 1, MaxStamina);
 
 
     }
@@ -78,7 +78,7 @@ public class StaminaManager : Script{
 
         StateMachine.RegenningStamina = false;
 
-        Stamina = Mathf.Clamp(Stamina, 1, MaxStamina);
+
 
     }
 }
