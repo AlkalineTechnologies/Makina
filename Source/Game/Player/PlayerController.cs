@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using FlaxEditor;
 using FlaxEngine;
@@ -139,7 +139,10 @@ public class PlayerController : Script
     }
 
     private int _GroundCheckCounter = 0;
-    void GroundCheckEnter (Collision collision) { StateMachine.IsGrounded = true ; _GroundCheckCounter++; }
+    void GroundCheckEnter (Collision collision) {
+        StateMachine.IsGrounded = true; 
+        _GroundCheckCounter++;
+    }
 
     void GroundCheckExit  (Collision collision) { 
         _GroundCheckCounter--; 
