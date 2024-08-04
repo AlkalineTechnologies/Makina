@@ -43,18 +43,13 @@ public class StaminaManager : Script{
         // * If the player is grounded (no air strafes are consumed)
         // The resulting air strafe count is clamped between 1 and MaxStamina.
         StateMachine.UsingStamina = true;
-        Stamina = Math.Clamp(
-            // The base air strafe count is reduced by a consumption rate, which is modified by various factors.
-            Stamina - (
+        
+        if (StateMachine.CanUseStamina && StateMachine.Jumping) Stamina -= StaminaJumpConsumption * MovementController.RunSpeedMultiplier * Time.DeltaTime;
+        else Stamina -= StaminaStrafeConsumption * Time.DeltaTime;
 
-                    (StateMachine.CanAirStrafe && StateMachine.Running ?
-                        (MovementController.RunSpeedMultiplier * StaminaStrafeConsumption) : StaminaStrafeConsumption
-                    ) * Time.DeltaTime
+        if (InputSystem.JumpInput && StateMachine.Jumping) Stamina -= StaminaJumpConsumption ;
 
-                ),
-            // The resulting value is clamped between 1 and AirStrafeMax.
-            1, MaxStamina
-        );
+        Stamina = Math.Clamp(Stamina, 0, MaxStamina);
 
 
     }
