@@ -11,7 +11,7 @@ namespace Game;
 public class PlayerStateMachine : Script
 {
     public  bool    Running            { get; set; }
-    public  bool    CanAirStrafe       { get; set; }
+    public  bool    CanUseStamina      { get; set; }
     public  bool    RegenningStamina   { get; set; }
     public  bool    UsingStamina       { get; set; }
     public  bool    Jumping            { get; set; }

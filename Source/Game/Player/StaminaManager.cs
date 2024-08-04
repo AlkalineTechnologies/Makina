@@ -30,9 +30,9 @@ public class StaminaManager : Script{
         if (!StateMachine.RegenningStamina)
             _ = RegenStamina();
 
-        StateMachine.CanAirStrafe = !StateMachine.IsGrounded && Stamina > 0 && InputSystem.MovementInput != Vector3.Zero;
+        StateMachine.CanUseStamina = !StateMachine.IsGrounded && Stamina > 0 && InputSystem.MovementInput != Vector3.Zero;
 
-        if (!StateMachine.CanAirStrafe) return;
+        if (!StateMachine.CanUseStamina) return;
 
         // This code manages the deduction of air strafes based on certain conditions,
         // 1) The player must not be grounded.
@@ -42,6 +42,7 @@ public class StaminaManager : Script{
         // * If the player is moving (normal rate of air strafe consumption)
         // * If the player is grounded (no air strafes are consumed)
         // The resulting air strafe count is clamped between 1 and MaxStamina.
+        
         StateMachine.UsingStamina = true;
         
         if (StateMachine.CanUseStamina && StateMachine.Jumping) Stamina -= StaminaJumpConsumption * MovementController.RunSpeedMultiplier * Time.DeltaTime;
