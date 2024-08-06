@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using FlaxEditor;
 using FlaxEngine;
@@ -129,7 +129,9 @@ public class PlayerController : Script
         bool CanJump = StaminaManager.Stamina - StaminaManager.StaminaJumpConsumption > 0 || StateMachine.IsGrounded;
         // When you can't jump: no stamina or not grounded
         if (!CanJump) {
-            SFX_Unavailable.Play();
+            // TODO: Add sound effect
+
+            // SFX_Unavailable.Play();
             HUD.Effect_Flash_ProgressBar(HUD.StaminaBarFlashColor, HUD.StaminaBarDefaultColor, HUD.StaminaBarFlashDuration);
             return;
         } 
