@@ -1,3 +1,8 @@
+
+> [!IMPORTANT]
+> Whilst Makina is still under development, I won't commit or update this repo until <br>
+> I've reached a version with something to show for it.
+
 # Makina
 Source code for the demo
 
